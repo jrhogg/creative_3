@@ -42,17 +42,17 @@ var app = new Vue({
       });
     },
     falHeavy: function() {
-      load("falconheavy");
+      this.load("falconheavy");
       this.title = "Falcon Heavy";
       this.number = 0;
     },
     fal1: function() {
-      load("falcon1");
+      this.load("falcon1");
       this.title = "Falcon 1";
       this.number = 1;
     },
     fal9: function() {
-      load("falcon9");
+      this.load("falcon9");
       this.title = "Falcon 9";
       this.number = 2;
     },
