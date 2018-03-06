@@ -1,0 +1,42 @@
+<!DOCTYPE html> <html>
+  <head>
+    <link rel="stylesheet" href="/styles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <title>Explosions?</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Space X Rockets</h1>
+      <div v-if="loading">
+	<p>Loading...</p>
+      </div>
+      <div v-else>
+      <p>
+	<button v-on:click="falHeavy">Falcon Heavy</button>
+	<button v-on:click="fal1">Falcon 1</button>
+	<button v-on:click="fal9">Falcon 9</button>
+      </p>
+	<h2>{{title}}</h2>
+	<p><span v-html="text"></span></p>
+	<h3>Add a Comment</h3>
+	<form v-on:submit.prevent="addComment">
+	  <input v-model="addedName" placeholder="Name"></p>
+	  <textarea v-model="addedComment"></textarea>
+	  <br/>
+	  <button type="submit">Comment</button>
+	</form>
+	<h3>Comments</h3>
+	<div v-for="comment in comments[number]">
+	  <hr>
+	  <p>{{comment.text}}</p>
+	  <p><i>-- {{comment.author}}<br>Posted at {{comment.time}} </i></p>
+	</div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="/script.js"></script>
+  </body>
+  <footer>
+    <p>Hey TA's! Go
+    <a href="https://github.com/BYU-CS260-Winter-2018/creative_3">here</a>.</p>
+  </footer> </html>
